@@ -10,7 +10,7 @@ public class Main {
             String name = "";
             while (true) {
                 System.out.println("— Введите название машины №" + i + ":");
-                name = scanner.next().trim();
+                name = scanner.nextLine().trim();
                 if (!name.isEmpty()) break;
                 System.out.println("— Название машины не должно быть пустым");
             }
@@ -20,6 +20,8 @@ public class Main {
                 System.out.println("— Введите скорость машины №" + i  + ":");
                 if (scanner.hasNextInt()) {
                     speed = scanner.nextInt();
+                    scanner.nextLine();
+
                     if (speed > 0 && speed <= 250) {
                         break;
                     } else {
@@ -27,7 +29,7 @@ public class Main {
                     }
                 } else {
                     System.out.println("— Неправильная скорость. Скорость должна быть целым числом");
-                    scanner.next();
+                    scanner.nextLine();
                 }
             }
 
